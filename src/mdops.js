@@ -1,6 +1,8 @@
-var emoji = require('markdown-it-emoji');
-// import { parse as emoParse } from 'twemoji';
-var md = require('markdown-it')({
+const yaml = require('js-yaml');
+const emoji = require('markdown-it-emoji');
+const frm = require('markdown-it-front-matter');
+
+const md = require('markdown-it')({
   html:true,
   linkify: false,
   })
@@ -10,13 +12,19 @@ var md = require('markdown-it')({
   headerless: true,
   multiline: true
 })
-.use(require('markdown-it-front-matter'), function(fm) {
-  console.log(fm)
-});
 ;
 
 
 
 export function renderMd(m){
- return md.render(m);
+  const r = {};
+  md.use(frm , (f)=>{
+    try{
+       r.fm = yaml.load(f);
+    }catch(e){
+       console.error("Can not parse frontmatter:" , e)
+    }
+  } );
+  r.html = md.render(m);
+  return r;
 }

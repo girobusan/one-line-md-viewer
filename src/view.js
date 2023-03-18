@@ -10,8 +10,13 @@ window.addEventListener("DOMContentLoaded", ()=>{
   window.mdRendered = true;
   const b = document.body.innerHTML;
   const m = document.createElement("main");
-  m.innerHTML = renderMd(b);
+  const rendered = renderMd(b);
+  m.innerHTML = rendered.html;
   document.body.innerHTML = m.outerHTML;
+  if(rendered.fm && rendered.fm.title){
+      window.document.title = rendered.fm.title;
+      return;
+  }
   try{
     const h = document.body.querySelectorAll("h1,h2,h3")[0];
     window.document.title = h.innerText;
