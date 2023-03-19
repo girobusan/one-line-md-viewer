@@ -5,7 +5,7 @@ title: "README: How to publish Markdown..."
 :sunglasses: <br />How to publish markdown document with one line of code
 ======================================================
 
-This idea is borrowed from [ blogtini ](https://github.com/traceypooh/blogtini) project.
+This idea is borrowed from [ blogtini ](https://github.com/traceypooh/blogtini) project. 
 
 1. Locate your markdown document
 1. Download `view.js` file from `dist` folder of this repo and put it in the same folder.
@@ -22,12 +22,24 @@ How does it work
 1. The script reads the document body content (which is markdown), renders it to HTML, and replaces body content with the rendered one, also adding some [ style ](https://simplecss.org/) and page title. 
 1. Script also recognizes frontmatter, for now only `title` property.
 
-Future improvements?
+Can we Make a Extremely Minimal CMS from this?
 --------------------
 
-After first load, script may capture clicks on links and perform nice
-navigation between further pages.
+Like [ My Markdown Site ](https://github.com/girobusan/mmds), but even more minimal.
 
+### What is missing
+
+* Navigation
+  * File lists (categories)
+  * Tags
+
+
+### What to try
+
+* [ ] After first load, script may capture clicks on links and perform nice navigation between further pages.
+* [ ] Script may load some kind of menu.
+* [ ] Script may have _optional_ access to file list and generate lists (category index, pages by tag) - but how we'd process theirs urls?
+* [ ] We can keep some site-wide metadata in special markdown files for accessibility (for clients without JS).(?)
 
 
 
