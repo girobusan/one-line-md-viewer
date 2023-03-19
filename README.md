@@ -22,10 +22,10 @@ How does it work
 1. The script reads the document body content (which is markdown), renders it to HTML, and replaces body content with the rendered one, also adding some [ style ](https://simplecss.org/) and page title. 
 1. Script also recognizes frontmatter, for now only `title` property.
 
-Can we Make a Extremely Minimal CMS from this?
+Can we make an Extremely Minimal CMS from this?
 --------------------
 
-Like [ My Markdown Site ](https://github.com/girobusan/mmds), but even more minimal.
+Like [ My Markdown Site](https://github.com/girobusan/mmds), but even more minimal.
 
 ### What is missing
 
